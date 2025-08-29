@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Prajapati - Lead Node.js Engineer Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: #fff;
+            font-size: 14px;
+        }
+
+        .resume-container {
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-item i {
+            color: #007bff;
+            width: 16px;
+        }
+
+        /* Professional Summary */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary {
+            text-align: justify;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .company {
+            font-size: 15px;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .duration {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-description {
+            margin: 8px 0;
+            text-align: justify;
+            color: #444;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .achievements li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+            color: #444;
+        }
+
+        .achievements li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #007bff;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 2px 0;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+
+        .project-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .project-type {
+            font-size: 13px;
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .project-description {
+            font-size: 13px;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 6px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+
+        .tech-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 12px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .institution {
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        .year {
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .cert-year {
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 12px;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 15mm;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* Highlights */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .highlight-box h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .highlight-stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat {
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">VIJAY PRAJAPATI</h1>
+            <p class="title">Lead Node.js Engineer | AI-Assisted & Agent-Driven Development</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i>📧</i>
+                    <span>aadi.prajapati84@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span>Bangalore, India</span>
+                </div>
+                <div class="contact-item">
+                    <i>💼</i>
+                    <span>github.com/tikemantns</span>
+                </div>
+                <div class="contact-item">
+                    <i>📱</i>
+                    <span>Open to opportunities</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Lead Node.js Engineer with 8+ years of expertise in designing and implementing scalable backend systems, microservices architectures, and cloud-native solutions. Currently pioneering AI-assisted and agent-driven development practices to enhance backend intelligence and automate workflows. Proven track record of leading engineering teams, mentoring developers, and delivering enterprise-grade products that serve millions of users across retail, healthcare, and EdTech domains. Currently at Kmart Australia Limited, I lead backend engineering initiatives, mentor junior developers, and architect solutions that handle high-traffic API workloads. I thrive on solving complex technical challenges, whether it's optimizing database performance, implementing CI/CD pipelines, or designing fault-tolerant distributed systems.
+            </p>
+        </section>
+
+        <!-- Key Highlights -->
+        <div class="highlight-box">
+            <h4>Career Highlights</h4>
+            <div class="highlight-stats">
+                <div class="stat">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">API's Services</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">System Uptime</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Competencies -->
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul class="skill-list">
+                        <li>JavaScript (ES6+)</li>
+                        <li>TypeScript</li>
+                        <li>ReactJs</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend Frameworks</h4>
+                    <ul class="skill-list">
+                        <li>NodeJs</li>
+                        <li>ExpressJs</li>
+                        <li>NestJS</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul class="skill-list">
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & DevOps</h4>
+                    <ul class="skill-list">
+                        <li>AWS (EC2, ECS, S3, Lambda, SNS, SQS, DynamoDB)</li>
+                        <li>Eventing(Kafka)</li>
+                        <li>Docker</li>
+                        <li>CI/CD (GitHub Actions, Jenkins)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Architecture & Design</h4>
+                    <ul class="skill-list">
+                        <li>Microservices Architecture</li>
+                        <li>System Design</li>
+                        <li>Serverless Computing</li>
+                        <li>API Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Leadership & Practices</h4>
+                    <ul class="skill-list">
+                        <li>Team Leadership</li>
+                        <li>Code Review</li>
+                        <li>Performance Optimization</li>
+                        <li>Security Best Practices</li>
+                        <li>Monitoring & Logging</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Lead Node.js Engineer</div>
+                    <div class="company">Kmart Australia Limited</div>
+                    <div class="duration">2022 - Present | Melbourne, Australia (Remote)</div>
+                </div>
+                <p class="job-description">
+                    Leading backend engineering initiatives for one of Australia's largest retail chains, responsible for designing and implementing scalable microservices that handle millions of transactions daily across e-commerce and in-store systems.
+                </p>
+                <ul class="achievements">
+                    <li>Architected and deployed microservices handling 10M+ daily API calls with 99.9% uptime</li>
+                    <li>Led API integration projects for inventory management, order processing, and supply chain systems</li>
+                    <li>Optimized database queries and caching strategies, reducing API response times by 60%</li>
+                    <li>Mentored 5+ junior developers and established comprehensive code review standards</li>
+                    <li>Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 70%</li>
+                    <li>Designed fault-tolerant distributed systems for handling peak retail traffic during sales events</li>
+                    <li>Collaborated with cross-functional teams to deliver customer-facing features serving millions of users</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Kubernetes</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Senior Node.js Engineer</div>
+                    <div class="company">1Health (Healthcare Technology)</div>
+                    <div class="duration">2017 - 2022 | Bangalore, India</div>
+                </div>
+                <p class="job-description">
+                    Developed secure healthcare APIs and systems for a digital health platform serving thousands of patients and healthcare providers. Focused on HIPAA compliance, data security, and performance optimization.
+                </p>
+                <ul class="achievements">
+                    <li>Built HIPAA-compliant APIs for patient data management and electronic health records (EHR)</li>
+                    <li>Improved overall system performance by 45% through strategic caching and query optimization</li>
+                    <li>Implemented real-time notification systems for healthcare alerts and appointment reminders</li>
+                    <li>Designed secure authentication and authorization mechanisms using JWT and OAuth 2.0</li>
+                    <li>Integrated third-party healthcare services, payment gateways, and telemedicine platforms</li>
+                    <li>Developed automated testing frameworks achieving 90%+ code coverage</li>
+                    <li>Led migration from monolithic to microservices architecture, improving scalability</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">AWS Lambda</span>
+                    <span class="tech-tag">GraphQL</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Node.js Engineer</div>
+                    <div class="company">Gingerwebs (EdTech Solutions)</div>
+                    <div class="duration">2015 - 2017 | Bangalore, India</div>
+                </div>
+                <p class="job-description">
+                    Started backend engineering journey by designing and implementing scalable solutions for EdTech platforms. Gained expertise in handling high-concurrency assessment systems and real-time data processing.
+                </p>
+                <ul class="achievements">
+                    <li>Developed backend infrastructure for online assessment platform handling 100K+ concurrent users</li>
+                    <li>Built real-time exam monitoring and comprehensive anti-cheating systems</li>
+                    <li>Implemented automated grading algorithms for various question types and assessment formats</li>
+                    <li>Optimized database schemas and indexing strategies for handling large-scale assessment data</li>
+                    <li>Created comprehensive API documentation and automated testing frameworks</li>
+                    <li>Established monitoring and logging systems for proactive issue detection and resolution</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Socket.io</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="section">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">ThinkExam - Online Assessment Platform</div>
+                <div class="project-type">EdTech Platform | Scale: Millions of Users</div>
+                <p class="project-description">
+                    Comprehensive online examination and assessment platform designed to handle millions of concurrent users. Built with scalable microservices architecture to support educational institutions worldwide, featuring real-time monitoring, anti-cheating mechanisms, and automated grading systems.
+                </p>
+                <ul class="achievements">
+                    <li>Real-time exam monitoring with advanced proctoring capabilities</li>
+                    <li>Multi-tenant architecture supporting thousands of institutions</li>
+                    <li>Automated grading and comprehensive analytics dashboard</li>
+                    <li>Performance optimization handling 100K+ concurrent examinations</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">Docker</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">PracticePlus - Healthcare Management System</div>
+                <div class="project-type">Healthcare/Telemedicine Platform</div>
+                <p class="project-description">
+                    Secure healthcare platform enabling remote consultations, patient management, and prescription handling. Built with HIPAA compliance and end-to-end encryption for sensitive medical data, supporting thousands of healthcare providers.
+                </p>
+                <ul class="achievements">
+                    <li>Video consultation integration with secure data transmission</li>
+                    <li>Electronic health records (EHR) management system</li>
+                    <li>Automated appointment scheduling and prescription management</li>
+                    <li>Payment processing integration with healthcare billing standards</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">NestJS</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">GraphQL</span>
+                    <span class="tech-tag">AWS Lambda</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Enterprise API Suite - Retail Backend Systems</div>
+                <div class="project-type">Microservices Architecture | E-commerce</div>
+                <p class="project-description">
+                    High-performance API collection and microservices powering retail backends including suppliers, factories, audits, and costing systems. Designed for reliability, scalability, and seamless enterprise integration.
+                </p>
+                <ul class="achievements">
+                    <li>Payment gateway integration APIs with fraud detection</li>
+                    <li>Inventory management microservices with real-time synchronization</li>
+                    <li>User authentication & authorization with role-based access control</li>
+                    <li>Analytics and reporting APIs with data visualization capabilities</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Redis</span>
+                    <span class="tech-tag">CI/CD</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <div class="two-column">
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Technology (B.Tech)</div>
+                    <div class="institution">Computer Science & Engineering</div>
+                    <div class="year">2012 - 2016</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="cert-item">
+                    <span class="cert-name">AWS Certified Solutions Architect</span>
+                    <span class="cert-year">2020</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Node.js Certified Developer</span>
+                    <span class="cert-year">2016</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">MongoDB Certified</span>
+                    <span class="cert-year">2016</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- Additional Skills -->
+        <section class="section">
+            <h2 class="section-title">Additional Expertise</h2>
+            <div class="tech-tags" style="gap: 8px;">
+                <span class="tech-tag">AI-Assisted Development</span>
+                <span class="tech-tag">Agent-Driven Programming</span>
+                <span class="tech-tag">Microservices Architecture</span>
+                <span class="tech-tag">System Design</span>
+                <span class="tech-tag">Performance Optimization</span>
+                <span class="tech-tag">Serverless</span>
+                <span class="tech-tag">Team Leadership</span>
+                <span class="tech-tag">Code Review</span>
+                <span class="tech-tag">API Design</span>
+                <span class="tech-tag">Security Best Practices</span>
+                <span class="tech-tag">Monitoring & Logging</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

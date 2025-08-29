@@ -1,6 +1,63 @@
 // Portfolio JavaScript functionality
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced typing effect for hero subtitle
+    const typingElement = document.querySelector('.typing-text');
+    if (typingElement) {
+        const texts = [
+            "Lead NodeJs Engineer | AI-Assisted & Agent-Driven Development",
+            "Backend Architect",
+            "Tech Leader",
+            "Microservices Expert",
+            "Cloud Solutions Architect"
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isPaused = false;
+        
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (!isDeleting && charIndex <= currentText.length) {
+                typingElement.textContent = currentText.slice(0, charIndex);
+                charIndex++;
+                
+                if (charIndex === currentText.length + 1) {
+                    isPaused = true;
+                    setTimeout(() => {
+                        isPaused = false;
+                        isDeleting = true;
+                    }, 2000); // Pause at end
+                }
+            } else if (isDeleting && charIndex >= 0) {
+                typingElement.textContent = currentText.slice(0, charIndex);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(() => {
+                        typeText();
+                    }, 500);
+                    return;
+                }
+            }
+            
+            if (!isPaused) {
+                const speed = isDeleting ? 50 : 100;
+                setTimeout(typeText, speed);
+            }
+        }
+        
+        // Start typing animation after other animations
+        setTimeout(() => {
+            typeText();
+        }, 2000);
+    }
+
+    // Enhanced animated background
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     navLinks.forEach(link => {
@@ -162,12 +219,18 @@ document.addEventListener('DOMContentLoaded', function() {
         counterObserver.observe(aboutSection);
     }
 
-    // Parallax effect for hero section
+    // Enhanced parallax effect for hero section
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const heroContent = document.querySelector('.hero-content');
+        const animatedBg = document.querySelector('.animated-bg');
+        
         if (heroContent && scrolled < window.innerHeight) {
             heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+        
+        if (animatedBg && scrolled < window.innerHeight) {
+            animatedBg.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
     });
 
@@ -179,6 +242,57 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Email link clicked:', this.href);
         });
     });
+
+    // Enhanced animated background
+    function createDynamicBackground() {
+        const animatedBg = document.querySelector('.animated-bg');
+        if (!animatedBg) return;
+
+        // Create additional floating particles
+        for (let i = 0; i < 8; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle';
+            particle.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(0, 123, 255, 0.5);
+                border-radius: 50%;
+                animation: floatParticle ${4 + Math.random() * 4}s ease-in-out infinite;
+                animation-delay: ${Math.random() * 2}s;
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+            `;
+            animatedBg.appendChild(particle);
+        }
+
+        // Add CSS for particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatParticle {
+                0%, 100% {
+                    transform: translateY(0px) translateX(0px);
+                    opacity: 0.3;
+                }
+                25% {
+                    transform: translateY(-15px) translateX(10px);
+                    opacity: 0.8;
+                }
+                50% {
+                    transform: translateY(-5px) translateX(-8px);
+                    opacity: 1;
+                }
+                75% {
+                    transform: translateY(-12px) translateX(15px);
+                    opacity: 0.6;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Initialize dynamic background
+    createDynamicBackground();
 
     // Profile image loading
     const profileImage = document.querySelector('.profile-image');

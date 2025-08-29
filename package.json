@@ -7,7 +7,9 @@
     "start": "npx http-server . -p 3000 -o",
     "dev": "npx live-server --port=3000 --open=/",
     "build": "echo 'Static site - no build required'",
-    "deploy": "echo 'Deploy to your preferred hosting platform'"
+    "deploy": "echo 'Deploy to your preferred hosting platform'",
+    "generate-resume": "./generate-pdf.sh",
+    "view-resume": "open resume.html"
   },
   "keywords": [
     "portfolio",
@@ -37,7 +39,8 @@
   "homepage": "",
   "devDependencies": {
     "http-server": "^14.1.1",
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "puppeteer": "^21.11.0"
   },
   "engines": {
     "node": ">=14.0.0"
