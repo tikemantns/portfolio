@@ -1,0 +1,50 @@
+{
+  "name": "vijay-prajapati-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Vijay Prajapati - Senior Node.js Engineer",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3000 --open=/",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Deploy to your preferred hosting platform'"
+  },
+  "keywords": [
+    "portfolio",
+    "nodejs",
+    "backend",
+    "engineer",
+    "javascript",
+    "typescript",
+    "microservices",
+    "aws",
+    "docker",
+    "kubernetes"
+  ],
+  "author": {
+    "name": "Vijay Prajapati",
+    "email": "aadi.prajapati84@gmail.com",
+    "url": ""
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

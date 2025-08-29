@@ -1,0 +1,24 @@
+{
+  "name": "Vijay Prajapati - Senior Node.js Engineer",
+  "short_name": "Vijay Portfolio",
+  "description": "Professional portfolio of Vijay Prajapati, Senior Node.js Engineer specializing in scalable backend systems and microservices.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23007bff'/><text x='50' y='60' font-family='Arial' font-size='40' fill='white' text-anchor='middle' font-weight='bold'>VP</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23007bff'/><text x='50' y='60' font-family='Arial' font-size='40' fill='white' text-anchor='middle' font-weight='bold'>VP</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["business", "productivity", "developer"],
+  "lang": "en"
+}
